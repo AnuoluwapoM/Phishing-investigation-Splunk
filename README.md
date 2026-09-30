@@ -1,4 +1,4 @@
-# Phishing Email Investigation & Threat Analysis
+
 
 ## Project Overview
 
@@ -43,3 +43,37 @@ The goal of the investigation was to determine whether the email was malicious, 
 - SPL
 - Incident Response
 - Security Documentation
+
+- 
+
+---
+
+# Investigation
+
+## Phase 1: Initial Phishing Email Analysis
+
+### Objective
+
+The first stage of the investigation was to examine the suspicious email and identify characteristics commonly associated with phishing attacks.
+
+Before investigating network or SIEM logs, I analyzed the email itself to understand the potential threat and identify Indicators of Compromise (IOCs) that could be used during later stages of the investigation.
+
+### What I Examined
+
+During the initial analysis, I reviewed:
+
+- Sender information and email address
+- Sender domain
+- Email subject and message content
+- Suspicious links or URLs
+- Email header information
+- Domain reputation
+- Signs of spoofing or impersonation
+- Urgency or social engineering techniques
+- Potential Indicators of Compromise (IOCs)
+
+### Investigation Approach
+
+Rather than interacting directly with suspicious links, I extracted relevant indicators from the email for further analysis using external threat intelligence and email-security tools.
+
+The identified indicators were then investigated using tools such as MXToolbox and VirusTotal to gather additional information about the sender infrastructure, domain reputation, and potential malicious activity.# Phishing Email Investigation & Threat Analysis
