@@ -88,7 +88,7 @@ I used MXToolbox to analyze the email header and review SPF, DKIM, DMARC, routin
 
 ### Email Authentication Analysis
 
-![MXToolbox Email Authentication Analysis](screenshot/mxtoolbox1.png)
+![MXToolbox Email Authentication Analysis](screenshot/MXToolbox1.png)
 
 The MXToolbox analysis identified several authentication and identity anomalies:
 
