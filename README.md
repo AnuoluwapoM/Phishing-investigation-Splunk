@@ -101,3 +101,17 @@ The MXToolbox analysis identified several authentication and identity anomalies:
 - **Reply-To Mismatch:** Replies were directed to an unrelated Gmail address rather than Microsoft or the visible sender domain.
 
 These findings did not rely on a single indicator. The combination of failed email-authentication checks, identity inconsistencies, and sender/Reply-To mismatches increased the suspicion that the message was a phishing attempt.
+
+### Email Routing and Originating IP Analysis
+
+![MXToolbox Email Routing Analysis](MXToolbox2.png)
+
+The email header routing information was reviewed to trace the path the message followed through the mail infrastructure.
+
+The analysis identified `89.144.44.41` in the early email-routing hops. This IP address was extracted as an Indicator of Compromise (IOC) for further investigation.
+
+The message subsequently passed through Microsoft/Outlook mail infrastructure. The presence of legitimate mail servers later in the routing path does not by itself establish that the original sender was legitimate.
+
+### IOC Identified
+
+- **Originating/Sender IP:** `89.144.44.41`
