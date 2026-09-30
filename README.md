@@ -77,3 +77,27 @@ During the initial analysis, I reviewed:
 Rather than interacting directly with suspicious links, I extracted relevant indicators from the email for further analysis using external threat intelligence and email-security tools.
 
 The identified indicators were then investigated using tools such as MXToolbox and VirusTotal to gather additional information about the sender infrastructure, domain reputation, and potential malicious activity.# Phishing Email Investigation & Threat Analysis
+
+## Phase 2: Email Header Analysis with MXToolbox
+
+### Objective
+
+The next stage of the investigation was to analyze the email header to determine the true sending infrastructure and evaluate whether the message passed standard email authentication checks.
+
+I used MXToolbox to analyze the email header and review SPF, DKIM, DMARC, routing information, and other header fields for signs of spoofing or impersonation.
+
+### Email Authentication Analysis
+
+![MXToolbox Email Authentication Analysis](screenshot/mxtoolbox1.png)
+
+The MXToolbox analysis identified several authentication and identity anomalies:
+
+- **DMARC:** No discoverable DMARC record was found for the sender domain.
+- **SPF Alignment:** Failed, indicating that the sending domain did not align with the domain presented in the visible From address.
+- **SPF Authentication:** Failed for the originating sender IP.
+- **DKIM Alignment:** Failed because no valid DKIM signing domain aligned with the visible From domain.
+- **DKIM Authentication:** Failed because a valid DKIM signature could not be verified.
+- **Brand/Domain Mismatch:** The email presented itself as a Microsoft account-security message, but the visible sender domain was `access-accsecurity.com`.
+- **Reply-To Mismatch:** Replies were directed to an unrelated Gmail address rather than Microsoft or the visible sender domain.
+
+These findings did not rely on a single indicator. The combination of failed email-authentication checks, identity inconsistencies, and sender/Reply-To mismatches increased the suspicion that the message was a phishing attempt.
